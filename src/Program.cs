@@ -10,13 +10,20 @@ namespace src
         {
             string option;
             printOptions();
+
             while ((option = ReadLine().ToLower()) != null && quit(option))
             {
+                Console.Clear();
                 switch (option)
                 {
                     case "1":
                         NumericLiteral nl = new NumericLiteral();
                         nl.description();
+                        break;
+                    case "2":
+                        OutVariable ov = new OutVariable();
+                        ov.description();
+                        ov.convertStringToIntNOW();
                         break;
                     default:
                         break;
@@ -28,6 +35,7 @@ namespace src
         static Action printOptions = () =>
                   {
                       Option opt = new Option();
+                      WriteLine($"{opt.Title} \n");
                       foreach (var o in opt.Options)
                       {
                           WriteLine($"\n{o}");
