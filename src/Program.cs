@@ -1,6 +1,5 @@
 ﻿using System;
 using static System.Console;
-using System.Linq;
 
 namespace src
 {
@@ -10,7 +9,7 @@ namespace src
         static void Main(string[] args)
         {
             string option;
-            options();
+            printOptions();
             while ((option = ReadLine().ToLower()) != null && quit(option))
             {
                 switch (option)
@@ -22,10 +21,18 @@ namespace src
                     default:
                         break;
                 }
-                options();
+                printOptions();
             }
         }
 
+        static Action printOptions = () =>
+                  {
+                      Option opt = new Option();
+                      foreach (var o in opt.Options)
+                      {
+                          WriteLine($"\n{o}");
+                      }
+                  };
         static Func<string, bool> quit = (opt) =>
         {
             bool r = true;
@@ -37,27 +44,5 @@ namespace src
                 };
             return r;
         };
-
-        static Action options = () =>
-        {
-           Option opt = new Option();
-           foreach (var o in opt.Options)
-           {
-               WriteLine($"\n{o}");
-           }
-        };
-    }
-
-    class Option
-    {
-        public string[] Options { get; private set; }
-        string[] options = {
-            "1. Numeric literanl syntax improvements",
-            "8. Quit"
-        };
-
-        public Option(){
-            Options = options;
-        }
     }
 }
