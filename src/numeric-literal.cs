@@ -1,3 +1,5 @@
+using System;
+using static Color.ColorChange;
 using static System.Console;
 public class NumericLiteral
 {
@@ -18,6 +20,6 @@ public class NumericLiteral
 
     public void description()
     {
-        WriteLine($"\n{descr} --> {binary18str}");
+        WriteLineWithColor($"\n{descr} --> {binary18str}",ConsoleColor.Green);
     }
 }
