@@ -1,4 +1,6 @@
 using static System.Console;
+using System;
+using static Color.ColorChange;
 
 public class OutVariable
 {
@@ -11,7 +13,7 @@ public class OutVariable
 
     public void description()
     {
-        WriteLine($"\n{descr}");
+        WriteLineWithColor($"\n{descr}",ConsoleColor.Green);
     }
     internal int? convertStringToInt()
     {
