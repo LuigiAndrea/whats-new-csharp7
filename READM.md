@@ -1,7 +1,7 @@
 What's new in C# 7
 ===
 
-Don't worry if you are not up to speed on the latest C# language features. In this playground I provide a summary of the most relevant features in the latest version of C#. You can tweak the code to test them on your own without the need to create a new project.
+Don't worry if you are not up to speed on the latest C# language features. In this playground I provide a summary of the most relevant features in C#7. You can tweak the code to test them on your own.
 Let me know if there are important features that I missed.
 
 ### Prerequisitest
