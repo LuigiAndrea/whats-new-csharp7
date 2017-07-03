@@ -1,5 +1,6 @@
 ﻿using System;
 using static System.Console;
+using static Color.ColorChange;
 
 namespace src
 {
@@ -23,7 +24,20 @@ namespace src
                     case "2":
                         OutVariable ov = new OutVariable();
                         ov.description();
-                        ov.convertStringToIntNOW();
+                        break;
+                    case "3":
+                        TuplesEnhance te = new TuplesEnhance();
+                        te.description();
+                        (string name, int pen) = te.getInfoSoccerTeam();
+                        (string n, string stadium, int pennant, int founded) = te.getInfoSoccerTeamInDepth();
+                        var calc = TuplesEnhance.calculateAB(15, 4);
+                        var calc2 = TuplesEnhance.calculateABNoSemantic(15, 4);
+                        WriteLineWithColor($"Source Code Output", ConsoleColor.Red);
+
+                        WriteLine($"{name} --> {pen}");
+                        WriteLine($"{n} {pennant} {stadium} {founded}");
+                        WriteLine($"Div: {calc.div}, Sum: {calc.sum}");
+                        WriteLine($"Diff: {calc2.Item2}, Mult: {calc2.Item3}");
                         break;
                     default:
                         break;

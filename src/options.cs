@@ -5,6 +5,7 @@ class Option
     private string[] options = {
             "1. Numeric literal syntax improvements",
             "2. Out variables",
+            "3. Tuples Enhance",
             "8. Quit"
         };
 
