@@ -11,9 +11,14 @@ public class OutVariable
         descr = "From C# 7, you can declare variables on the fly when calling methods with out parameters";
     }
 
+    public void discardParameters()
+    {
+        incDec(2, out _, out int d);
+        WriteLine(d);
+    }
     public void description()
     {
-        WriteLineWithColor($"\n{descr}",ConsoleColor.Green);
+        WriteLineWithColor($"\n{descr}", ConsoleColor.Green);
     }
     internal int? convertStringToInt()
     {
@@ -34,5 +39,11 @@ public class OutVariable
             WriteLine("Could not parse the number");
 
         return null;
+    }
+
+    private void incDec(int num, out int inc, out int dec)
+    {
+        inc = num + 1;
+        dec = num - 1;
     }
 }
