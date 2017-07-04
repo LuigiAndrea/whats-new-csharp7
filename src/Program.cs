@@ -1,6 +1,7 @@
 ﻿using System;
 using static System.Console;
 using static Color.ColorChange;
+using System.Linq;
 
 namespace src
 {
@@ -12,7 +13,7 @@ namespace src
             string option;
             printOptions();
 
-            while ((option = ReadLine().ToLower()) != null && quit(option))
+            while ((option = ReadLine().ToLower()) != null && !quit(option))
             {
                 Console.Clear();
                 switch (option)
@@ -24,6 +25,8 @@ namespace src
                     case "2":
                         OutVariable ov = new OutVariable();
                         ov.description();
+                        sourceCodeOutput();
+                        ov.discardParameters();
                         break;
                     case "3":
                         TuplesEnhance te = new TuplesEnhance();
@@ -32,7 +35,7 @@ namespace src
                         (string n, string stadium, int pennant, int founded) = te.getInfoSoccerTeamInDepth();
                         var calc = TuplesEnhance.calculateAB(15, 4);
                         var calc2 = TuplesEnhance.calculateABNoSemantic(15, 4);
-                        WriteLineWithColor($"Source Code Output", ConsoleColor.Red);
+                        sourceCodeOutput();
 
                         WriteLine($"{name} --> {pen}");
                         WriteLine($"{n} {pennant} {stadium} {founded}");
@@ -44,8 +47,10 @@ namespace src
                 }
                 printOptions();
             }
+            Console.Clear();
         }
 
+        static Action sourceCodeOutput = () => WriteLineWithColor($"Source Code Output", ConsoleColor.Red);
         static Action printOptions = () =>
                   {
                       Option opt = new Option();
@@ -55,16 +60,6 @@ namespace src
                           WriteLine($"\n{o}");
                       }
                   };
-        static Func<string, bool> quit = (opt) =>
-        {
-            bool r = true;
-            foreach (var choice in quitChoices)
-                if (opt == choice)
-                {
-                    r = false;
-                    break;
-                };
-            return r;
-        };
+        static Func<string, bool> quit = (opt) => quitChoices.Contains(opt);       
     }
 }
