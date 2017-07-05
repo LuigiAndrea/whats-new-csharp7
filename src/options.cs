@@ -8,6 +8,7 @@ namespace utility
             "2. Out variables",
             "3. Tuples Enhance",
             "4. Switch with pattern",
+            "5. Ref local and return",
             "8. Quit"
         };
 

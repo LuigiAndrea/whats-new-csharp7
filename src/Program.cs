@@ -49,6 +49,11 @@ namespace src
                         sp.printTypeAndValue(2);
                         sp.printTypeAndValue("dsadsadas");
                         break;
+                    case "5":
+                    RefLocalReturn.description();
+                    sourceCodeOutput();
+                    RefLocalReturn.testRef();
+                    break;
                     default:
                         break;
                 }

@@ -10,6 +10,7 @@ namespace utility
             ["OutVariable"] = "From C# 7, you can declare variables on the fly when calling methods with out parameters",
             ["SwitchPattern"] = "From C# 7, you can switch on an object's type, the order of the case clauses is relevant except for the default clause",
             ["Tuples"] = "Improved the efficiency and language support for tuples (enables semantic names) Look the source code for examples on \n1. Syntax, tuple and assignment \n2. return multiple values \n3. Deconstruct and Extensions",
+            ["Ref"] = "Ref locals and ref returns enable algorithms that are more efficient by avoiding copying values, or performing dereferencing operations multiple times.",
         };
 
         public static string getDescriptions(string key)
