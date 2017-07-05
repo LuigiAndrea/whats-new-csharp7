@@ -5,7 +5,7 @@ using static Color.ColorChange;
 public class OutVariable
 {
     public const string Input = "1000";
-    public string descr { get; set; }
+    private string descr { get; set; }
     public OutVariable()
     {
         descr = "From C# 7, you can declare variables on the fly when calling methods with out parameters";

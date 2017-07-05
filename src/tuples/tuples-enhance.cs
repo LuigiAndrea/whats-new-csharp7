@@ -4,7 +4,7 @@ using static System.Console;
 
 public class TuplesEnhance
 {
-    public string descr { get; set; }
+    private string descr { get; set; }
     public SoccerTeam st { get; set; }
     public SoccerTeam stDeep { get; set; }
     public TuplesEnhance()

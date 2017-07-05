@@ -6,6 +6,7 @@ class Option
             "1. Numeric literal syntax improvements",
             "2. Out variables",
             "3. Tuples Enhance",
+            "4. Switch with pattern",
             "8. Quit"
         };
 

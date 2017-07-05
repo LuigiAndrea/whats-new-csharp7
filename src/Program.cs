@@ -42,6 +42,14 @@ namespace src
                         WriteLine($"Div: {calc.div}, Sum: {calc.sum}");
                         WriteLine($"Diff: {calc2.Item2}, Mult: {calc2.Item3}");
                         break;
+                    case "4":
+                        SwitchPattern sp = new SwitchPattern();
+                        sp.description();
+                        sourceCodeOutput();
+                        sp.printTypeAndValue(new myType("luigi"));
+                        sp.printTypeAndValue(2);
+                        sp.printTypeAndValue("dsadsadas");
+                        break;
                     default:
                         break;
                 }
@@ -60,6 +68,6 @@ namespace src
                           WriteLine($"\n{o}");
                       }
                   };
-        static Func<string, bool> quit = (opt) => quitChoices.Contains(opt);       
+        static Func<string, bool> quit = (opt) => quitChoices.Contains(opt);
     }
 }
