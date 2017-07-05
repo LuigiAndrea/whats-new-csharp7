@@ -1,33 +1,28 @@
 using System;
 using static Color.ColorChange;
 using static System.Console;
+using static utility.description;
 
-public class TuplesEnhance
+public static class TuplesEnhance
 {
-    private string descr { get; set; }
-    public SoccerTeam st { get; set; }
-    public SoccerTeam stDeep { get; set; }
-    public TuplesEnhance()
-    {
-        descr = $"Improved the efficiency and language support for tuples (enables semantic names) Look the source code for examples on \n1. Syntax, tuple and assignment \n2. return multiple values \n3. Deconstruct and Extensions";
-        st = new SoccerTeam("Milan", 18);
-        stDeep = new SoccerTeam("Milan", "San Siro", 18, 1899);
-    }
+    private static string descr = getDescriptions("Tuples");
+    public static SoccerTeam st = new SoccerTeam("Milan", 18);
+    public static SoccerTeam stDeep = new SoccerTeam("Milan", "San Siro", 18, 1899);
 
-    public void description()
+    public static void description()
     {
         WriteLineWithColor($"\n{descr}", ConsoleColor.Green);
     }
 
-    internal (string name, int pennant) getInfoSoccerTeam()
+    internal static (string name, int pennant) getInfoSoccerTeam()
     {
-        (string name, int pennant) = this.st;
+        (string name, int pennant) = st;
         return (name, pennant);
     }
 
-    internal (string name, string stadium, int pennant, int founded) getInfoSoccerTeamInDepth()
+    internal static (string name, string stadium, int pennant, int founded) getInfoSoccerTeamInDepth()
     {
-        (string name, string stadium, int pennant, int founded) = this.stDeep;
+        (string name, string stadium, int pennant, int founded) = stDeep;
         return (name, stadium, pennant, founded);
     }
 

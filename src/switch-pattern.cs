@@ -1,20 +1,18 @@
 using static System.Console;
 using System;
 using static Color.ColorChange;
+using static utility.description;
 
-public class SwitchPattern
+public static class SwitchPattern
 {
-    private string descr { get; set; }
-    public SwitchPattern()
-    {
-        descr = "From C# 7, you can switch on an object's type, the order of the case clauses is relevant except for the default clause";
-    }
-    public void description()
+    private static string descr = getDescriptions("SwitchPattern");
+
+    public static void description()
     {
         WriteLineWithColor($"\n{descr}", ConsoleColor.Green);
     }
 
-    public void printTypeAndValue(object x)
+    public static void printTypeAndValue(object x)
     {
         switch (x)
         {
@@ -36,7 +34,7 @@ public class SwitchPattern
             case null:
                 WriteLine("null");
                 break;
-                case myType mt:
+            case myType mt:
                 WriteLine($"myType {mt.Name} with length {mt.Value}");
                 break;
             default:
@@ -45,11 +43,13 @@ public class SwitchPattern
     }
 }
 
-class myType {
+internal class myType
+{
     public string Name { get; set; }
-    public  int Value { get; }
+    public int Value { get; }
 
-    public myType(string name){
+    public myType(string name)
+    {
         Name = name;
         Value = name.Length;
     }

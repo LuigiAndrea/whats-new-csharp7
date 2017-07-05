@@ -2,6 +2,9 @@
 using static System.Console;
 using static Color.ColorChange;
 using System.Linq;
+using static utility.Option;
+using sp = SwitchPattern;
+using te = TuplesEnhance;
 
 namespace src
 {
@@ -19,22 +22,19 @@ namespace src
                 switch (option)
                 {
                     case "1":
-                        NumericLiteral nl = new NumericLiteral();
-                        nl.description();
+                        NumericLiteral.description();
                         break;
                     case "2":
-                        OutVariable ov = new OutVariable();
-                        ov.description();
+                        OutVariable.description();
                         sourceCodeOutput();
-                        ov.discardParameters();
+                        OutVariable.discardParameters();
                         break;
                     case "3":
-                        TuplesEnhance te = new TuplesEnhance();
                         te.description();
                         (string name, int pen) = te.getInfoSoccerTeam();
                         (string n, string stadium, int pennant, int founded) = te.getInfoSoccerTeamInDepth();
-                        var calc = TuplesEnhance.calculateAB(15, 4);
-                        var calc2 = TuplesEnhance.calculateABNoSemantic(15, 4);
+                        var calc = te.calculateAB(15, 4);
+                        var calc2 = te.calculateABNoSemantic(15, 4);
                         sourceCodeOutput();
 
                         WriteLine($"{name} --> {pen}");
@@ -43,7 +43,6 @@ namespace src
                         WriteLine($"Diff: {calc2.Item2}, Mult: {calc2.Item3}");
                         break;
                     case "4":
-                        SwitchPattern sp = new SwitchPattern();
                         sp.description();
                         sourceCodeOutput();
                         sp.printTypeAndValue(new myType("luigi"));
@@ -61,9 +60,9 @@ namespace src
         static Action sourceCodeOutput = () => WriteLineWithColor($"Source Code Output", ConsoleColor.Red);
         static Action printOptions = () =>
                   {
-                      Option opt = new Option();
-                      WriteLine($"{opt.Title} \n");
-                      foreach (var o in opt.Options)
+                      var (Headline, Options) = getOptions();
+                      WriteLine($"{Headline} \n");
+                      foreach (var o in Options)
                       {
                           WriteLine($"\n{o}");
                       }

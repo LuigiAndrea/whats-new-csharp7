@@ -1,8 +1,9 @@
-class Option
+namespace utility
 {
-    public string[] Options { get; private set; }
-    public string Title { get; private set; }
-    private string[] options = {
+    static class Option
+    {
+        private static string Headline = "Choose an Option: ";
+        private static string[] Options = {
             "1. Numeric literal syntax improvements",
             "2. Out variables",
             "3. Tuples Enhance",
@@ -10,14 +11,9 @@ class Option
             "8. Quit"
         };
 
-    public Option()
-    {
-        Title = "Choose an Option: ";
-        Options = options;
+        public static (string Headline, string[] Options) getOptions()
+        {
+            return (Headline, Options);
+        }
     }
 }
-
-
-
-
-

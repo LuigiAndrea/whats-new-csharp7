@@ -1,24 +1,21 @@
 using System;
 using static Color.ColorChange;
 using static System.Console;
-public class NumericLiteral
+using static utility.description;
+public static class NumericLiteral
 {
-    public const int binary18 = 0b0001_0010;
-    public const string binary18str = "0b0001_0010";
-    public const long BillionsAndBillions = 100_000_000_000;
-    public const int binary23 = 0b0001_0111;
-    private string descr { get; set; }
-    public NumericLiteral()
-    {
-        descr = "From C#7 is possible to Use the 0b prefix for binary literals and underscores to improve readability";
-    }
-
-    private int sumBinary()
+    private const int binary18 = 0b0001_0010;
+    private const string binary18str = "0b0001_0010";
+    private const long BillionsAndBillions = 100_000_000_000;
+    private const int binary23 = 0b0001_0111;
+    private static string descr = getDescriptions("NumericLiteral");
+   
+    public static int sumBinary()
     {
         return binary18 + binary23;
     }
 
-    public void description()
+    public static void description()
     {
         WriteLineWithColor($"\n{descr} --> {binary18str}",ConsoleColor.Green);
     }
