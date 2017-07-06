@@ -30,6 +30,6 @@ public static class RefLocalReturn
         (int i,int j) = index;
         WriteLine($"Before Assignment: {matrix[i,j]}");
         v = 2;
-        WriteLine($"Before Assignment: {matrix[i,j]}");
+        WriteLine($"After Assignment: {matrix[i,j]}");
     }
 }
