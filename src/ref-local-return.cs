@@ -26,9 +26,8 @@ public static class RefLocalReturn
     public static void testRef()
     {
         int[,] matrix = { { 1, 2 }, { 30, 4 }, { 55, 13 } };
-        ref int v = ref Find(matrix, x => x == 30, out (int,int) index);
+        ref int v = ref Find(matrix, x => x == 55, out (int,int) index);
         (int i,int j) = index;
-        WriteLine(index);
         WriteLine($"Before Assignment: {matrix[i,j]}");
         v = 2;
         WriteLine($"Before Assignment: {matrix[i,j]}");
