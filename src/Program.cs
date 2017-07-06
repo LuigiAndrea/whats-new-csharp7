@@ -50,10 +50,10 @@ namespace src
                         sp.printTypeAndValue("dsadsadas");
                         break;
                     case "5":
-                    RefLocalReturn.description();
-                    sourceCodeOutput();
-                    RefLocalReturn.testRef();
-                    break;
+                        RefLocalReturn.description();
+                        sourceCodeOutput();
+                        RefLocalReturn.testRef();
+                        break;
                     default:
                         break;
                 }
@@ -62,16 +62,16 @@ namespace src
             Console.Clear();
         }
 
-        static Action sourceCodeOutput = () => WriteLineWithColor($"Source Code Output", ConsoleColor.Red);
-        static Action printOptions = () =>
-                  {
-                      var (Headline, Options) = getOptions();
-                      WriteLine($"{Headline} \n");
-                      foreach (var o in Options)
-                      {
-                          WriteLine($"\n{o}");
-                      }
-                  };
-        static Func<string, bool> quit = (opt) => quitChoices.Contains(opt);
+        private static void sourceCodeOutput() => WriteLineWithColor($"Source Code Output", ConsoleColor.Red);
+        private static bool quit(string opt) => quitChoices.Contains(opt);
+        private static void printOptions()
+        {
+            var (Headline, Options) = getOptions();
+            WriteLine($"{Headline} \n");
+            foreach (var o in Options)
+            {
+                WriteLine($"\n{o}");
+            }
+        }
     }
 }
