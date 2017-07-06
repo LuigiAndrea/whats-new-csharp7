@@ -54,6 +54,14 @@ namespace src
                         sourceCodeOutput();
                         RefLocalReturn.testRef();
                         break;
+                    case "6":
+                        LocalFunction.description();
+                        sourceCodeOutput();
+                        LocalFunction.testIntersection();
+                        break;
+                    case "7":
+                        ExpressionBodied.description();
+                        break;
                     default:
                         break;
                 }

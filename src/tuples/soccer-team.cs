@@ -4,7 +4,15 @@ public class SoccerTeam
     public string Stadium { get; set; }
     public int Pennant { get; set; }
     public int Founded { get; set; }
-
+    private string nickname;
+    
+    // Expression-bodied get / set accessors. Example
+    public string Nickname
+    {
+        get => nickname;
+        set => this.nickname = value ?? "No Nickname provided";
+    }
+    public SoccerTeam(string name) => this.Name = name;
     public SoccerTeam(string name, int pennant)
     {
         Name = name;
@@ -18,7 +26,6 @@ public class SoccerTeam
         Stadium = stadium;
         Founded = founded;
     }
-
     public void Deconstruct(out string name, out string stadium, out int pennant, out int founded)
     {
         name = this.Name;

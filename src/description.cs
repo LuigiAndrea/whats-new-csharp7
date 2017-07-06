@@ -11,6 +11,8 @@ namespace utility
             ["SwitchPattern"] = "From C# 7, you can switch on an object's type, the order of the case clauses is relevant except for the default clause",
             ["Tuples"] = "Improved the efficiency and language support for tuples (enables semantic names) Look the source code for examples on \n1. Syntax, tuple and assignment \n2. return multiple values \n3. Deconstruct and Extensions",
             ["Ref"] = "Ref locals and ref returns enable algorithms that are more efficient by avoiding copying values, or performing dereferencing operations multiple times.",
+            ["LocalFunc"] = "From C# 7, you can define a method inside another method. There are two very common use cases for local functions: public iterator methods and public async methods. Both types of methods generate code that reports errors later than programmers might expect.",
+            ["Expression"] = "From C# 7 there are more members allowed to be implemented as expressions. Constructors, finalizers, and get and set accessors on properties and indexers. Look at Soccer-Team or Local-function files for some examples",
         };
 
         public static string getDescriptions(string key)
