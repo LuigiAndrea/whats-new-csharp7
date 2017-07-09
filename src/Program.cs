@@ -10,7 +10,7 @@ namespace src
 {
     class Program
     {
-        static string[] quitChoices = { "quit", "q", "8" };
+        static string[] quitChoices = { "quit", "q", "10" };
         static void Main(string[] args)
         {
             string option;
@@ -61,6 +61,15 @@ namespace src
                         break;
                     case "7":
                         ExpressionBodied.description();
+                        break;
+                    case "8":
+                        Throw.description();
+                        break;
+                    case "9":
+                        ValueTaskType.description();
+                        sourceCodeOutput();
+                        var a = ValueTaskType.CachedFunc();
+                        WriteLine(a);
                         break;
                     default:
                         break;

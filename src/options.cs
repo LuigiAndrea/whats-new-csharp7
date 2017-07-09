@@ -11,7 +11,9 @@ namespace utility
             "5. Ref local and return",
             "6. Local Functions",
             "7. Expression-bodied members",
-            "8. Quit"
+            "8. Throw expression",
+            "9 Generalized async return types",
+            "10. Quit"
         };
 
         public static (string Headline, string[] Options) getOptions()

@@ -1,3 +1,5 @@
+using System;
+
 public class SoccerTeam
 {
     public string Name { get; set; }
@@ -10,7 +12,7 @@ public class SoccerTeam
     public string Nickname
     {
         get => nickname;
-        set => this.nickname = value ?? "No Nickname provided";
+        set => this.nickname = value ?? throw new ArgumentNullException(paramName: nameof(Nickname), message: "Nickname must not be null");
     }
     public SoccerTeam(string name) => this.Name = name;
     public SoccerTeam(string name, int pennant)
