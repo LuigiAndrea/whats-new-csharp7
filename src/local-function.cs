@@ -16,7 +16,7 @@ public static class LocalFunction
 
     public static void testIntersection()
     {
-        int[] a = new int[5] { 1, 2, 4, 4, 7 };
+        int[] a = new int[5] { 1, 2, 4, 4,6 };
         int[] b = new int[4] { 4, 1, 4, 6 };
 
         IEnumerable<int> ResultSet;
@@ -57,11 +57,7 @@ public static class LocalFunction
 
     private static void iterator(string name) => WriteLineWithColor($"iterator created for {(name ?? throw new ArgumentNullException(paramName: nameof(name), message: "Iterator's name  must not be null"))}", ConsoleColor.Blue);
     private static void print(IEnumerable<int> ResultSet) => getList(ResultSet).ForEach(x => WriteLine(x));
-
-    private static List<int> getList(IEnumerable<int> ResultSet) => (ResultSet == null)
-                    ? throw new ArgumentNullException(paramName: nameof(ResultSet), message: "The result set must not be null")
-                    : ResultSet.ToList();
-
+    private static List<int> getList(IEnumerable<int> ResultSet) => ResultSet?.ToList() ?? throw new ArgumentNullException(paramName: nameof(ResultSet), message: "The result set must not be null");
 
     //Added constrains just to show the differences
     private static IEnumerable<int> intersection(int[] a, int[] b)
