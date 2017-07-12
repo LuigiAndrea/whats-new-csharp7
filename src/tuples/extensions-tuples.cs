@@ -6,4 +6,6 @@ public static class ExtensionsTuple
         name = st.Name;
         pennant = st.Pennant;
     }
+
+    public static void Add(this Tournmanent e, SoccerTeam s) => e.AddTeam(s);
 }

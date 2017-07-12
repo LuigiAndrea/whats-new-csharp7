@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SoccerTeam
 {
@@ -7,7 +9,7 @@ public class SoccerTeam
     public int Pennant { get; set; }
     public int Founded { get; set; }
     private string nickname;
-    
+
     // Expression-bodied get / set accessors. Example
     public string Nickname
     {
@@ -35,4 +37,12 @@ public class SoccerTeam
         stadium = this.Stadium;
         founded = this.Founded;
     }
+}
+
+public class Tournmanent : IEnumerable<SoccerTeam>
+{
+    private List<SoccerTeam> allTeam = new List<SoccerTeam>();
+    public void AddTeam(SoccerTeam st) => allTeam.Add(st);
+    public IEnumerator<SoccerTeam> GetEnumerator() => allTeam.GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator() => allTeam.GetEnumerator();
 }

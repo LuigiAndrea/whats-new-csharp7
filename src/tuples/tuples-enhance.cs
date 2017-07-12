@@ -50,4 +50,20 @@ public static class TuplesEnhance
         named = diffName;
         Console.WriteLine($"{named.sum}");
     }
+
+    public static void buildTournament()
+    {
+        Console.WriteLine(new String('*', 15));
+
+        Tournmanent tour = new Tournmanent(){
+            new SoccerTeam("Milan"),
+            new SoccerTeam("Bari"),
+            new SoccerTeam("Inter")
+        };
+
+        foreach (var team in tour)
+        {
+            WriteLine(team.Name);
+        }
+    }
 }

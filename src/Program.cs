@@ -41,6 +41,7 @@ namespace src
                         WriteLine($"{n} {pennant} {stadium} {founded}");
                         WriteLine($"Div: {calc.div}, Sum: {calc.sum}");
                         WriteLine($"Diff: {calc2.Item2}, Mult: {calc2.Item3}");
+                        te.buildTournament();
                         break;
                     case "4":
                         sp.description();
