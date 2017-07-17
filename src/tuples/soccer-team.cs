@@ -44,5 +44,5 @@ public class Tournmanent : IEnumerable<SoccerTeam>
     private List<SoccerTeam> allTeam = new List<SoccerTeam>();
     public void AddTeam(SoccerTeam st) => allTeam.Add(st);
     public IEnumerator<SoccerTeam> GetEnumerator() => allTeam.GetEnumerator();
-    IEnumerator IEnumerable.GetEnumerator() => allTeam.GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }
