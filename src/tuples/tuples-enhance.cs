@@ -1,6 +1,5 @@
 using System;
 using static Color.ColorChange;
-using static System.Console;
 using static utility.description;
 
 public static class TuplesEnhance
@@ -62,8 +61,10 @@ public static class TuplesEnhance
         };
 
         foreach (var team in tour)
-        {
-            WriteLine(team.Name);
-        }
+            Console.WriteLine(team.Name);
+
+        SoccerTeam[] st = { new SoccerTeam("Bari"), new SoccerTeam("Napoli") };
+        Console.WriteLine(tour.concatTeamName());
+        Console.WriteLine($"{st.concatTeamName()} \n");
     }
 }
