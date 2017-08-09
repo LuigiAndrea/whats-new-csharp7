@@ -23,7 +23,7 @@ Verify your version running dotnet --version in a terminal/console window.
 
 ### Build and Run
 
-To __build and run__ the sample, navigate to src and run the following commands:
+To __build and run__ the samples, navigate to src and run the following commands:
 ```
 dotnet restore
 
