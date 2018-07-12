@@ -18,7 +18,7 @@ List of C# 7 new charateristics described in the project
 
 ### Prerequisitest
 
-You need to have installed .NET Core 1.1 on your machine.
+You need to have installed .NET Core 2.0 on your machine.
 Verify your version running dotnet --version in a terminal/console window.
 
 ### Build and Run
